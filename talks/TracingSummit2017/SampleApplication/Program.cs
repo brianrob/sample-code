@@ -4,6 +4,9 @@ using System;
 
 class Program
 {
+    public const int objectArrSize = 10000;
+    public static int objectArrIndex = 0;
+    public static object[] objectArr = new object[objectArrSize];
     public static int aStatic = 0;
     // Spin is a simple compute bound program that lasts for 5 seconds
     // It is a useful test program for CPU profilers.  
@@ -53,7 +56,15 @@ class Program
 
             // Do some work in this routine as well.   
             for (int i = 0; i < 10; i++)
-                aStatic += i;
+                //aStatic += i;
+                if(objectArrIndex < objectArrSize)
+                {
+                    objectArr[objectArrIndex++] = new object();
+                }
+                else
+                {
+                    objectArr = new object[objectArrSize];
+                }
         }
     }
 }
