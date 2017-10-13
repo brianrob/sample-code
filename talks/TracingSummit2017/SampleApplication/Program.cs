@@ -7,16 +7,12 @@ class Program
     public const int objectArrSize = 10000;
     public static int objectArrIndex = 0;
     public static object[] objectArr = new object[objectArrSize];
-    public static int aStatic = 0;
-    // Spin is a simple compute bound program that lasts for 5 seconds
-    // It is a useful test program for CPU profilers.  
     static int Main(string[] args)
     {
-        int numSec = 5;
+        int numSec = 1;
         if (args.Length == 1)
             numSec = int.Parse(args[0]);
 
-        Console.WriteLine("Spinning for {0} seconds", numSec);
         RecSpin(numSec);
         return 0;
     }
@@ -44,8 +40,7 @@ class Program
     }
 
     // SpingForASecond repeatedly calls DateTime.Now until for
-    // 1 second.  It also does some work of its own in this
-    // methods so we get some exclusive time to look at.  
+    // 1 second.  It also does some work of its own.
     static void SpinForASecond()
     {
         DateTime start = DateTime.Now;
@@ -56,7 +51,7 @@ class Program
 
             // Do some work in this routine as well.   
             for (int i = 0; i < 10; i++)
-                //aStatic += i;
+            {
                 if(objectArrIndex < objectArrSize)
                 {
                     objectArr[objectArrIndex++] = new object();
@@ -65,6 +60,7 @@ class Program
                 {
                     objectArr = new object[objectArrSize];
                 }
+            }
         }
     }
 }
