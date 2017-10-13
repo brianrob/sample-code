@@ -1,0 +1,54 @@
+<H2>JITStats</H2>
+<H3><A Name="Stats_37669"><font color="blue">JIT Stats for for Process 37669: </font><A></H3>
+<UL>
+<LI>Process CPU Time: 0 msec</LI>
+<LI>Total Number of JIT compiled methods : 14</LI>
+<LI>Total MSec JIT compiling : 16</LI>
+<LI>JIT compilation time as a percentage of total process CPU time : ∞%</LI>
+<LI><A HREF="#Events_37669">Individual JIT Events</A></LI>
+<UL><LI> <A HREF="command:excel/37669">View in Excel</A></LI></UL>
+<LI><I>No JIT Inlining data available.  Consider enabling the JITInlining option.</I></LI>
+<LI> <A HREF="#UnderstandingJITPerf">JIT Perf Users Guide</A></LI>
+</UL>
+<P><b>Background JIT compilation events are not being collected.</b>   If you are interested in seeing the operation of Background JIT
+Enabled the 'Background JIT' checkbox in the 'Advanced' section of the collection dialog when collecting the data.See <A HREF="#UnderstandingBackgroundJIT">Guide to Background JIT</A> for more.</P>
+<P>Below is a table of the time taken to JIT compile the methods used in the program, broken down by module.  
+If this time is significant you can eliminate it by <A href="http://msdn.microsoft.com/en-us/magazine/cc163808.aspx">NGening</A> your application.  
+This will improve the startup time for your app.  
+</P>
+<P>The list below is also useful for tuning the startup performance of your application in general.  
+In general you want as little to be run during startup as possible.  
+If you have 1000s of methods being compiled on startup you should try to defer some of that computation until absolutely necessary.
+</P>
+<Center>
+<Table Border="1">
+<TR><TH>Name</TH><TH>JitTime<BR/>msec</TH><TH>Num Methods</TH><TH>IL Size</TH><TH>Native Size</TH></TR>
+<TR><TD Align="Left">TOTAL</TD><TD Align="Center">15.6</TD><TD Align="Center">14</TD><TD Align="Center">218</TD><TD Align="Center">1,840</TD></TR>
+<TR><TD Align="Center">/home/brianrob/src/sample-code/talks/TracingSummit2017/SampleApplication/bin/Release/netcoreapp2.0/SampleApplication.dll</TD><TD Align="Center">7.3</TD><TD Align="Center">5</TD><TD Align="Center">218</TD><TD Align="Center">558</TD></TR>
+<TR><TD Align="Center">/home/brianrob/src/sample-code/talks/TracingSummit2017/dotnet/shared/Microsoft.NETCore.App/2.0.0/System.Console.dll</TD><TD Align="Center">6.7</TD><TD Align="Center">3</TD><TD Align="Center">0</TD><TD Align="Center">1,012</TD></TR>
+<TR><TD Align="Center">/home/brianrob/src/sample-code/talks/TracingSummit2017/dotnet/shared/Microsoft.NETCore.App/2.0.0/System.Private.CoreLib.dll</TD><TD Align="Center">1.7</TD><TD Align="Center">6</TD><TD Align="Center">0</TD><TD Align="Center">270</TD></TR>
+</Table>
+</Center>
+<HR/>
+<H4><A Name="Events_37669">Individual JIT Events for Process 37669: <A></H4>
+<Center>
+<Table Border="1">
+<TR><TH>Start (msec)</TH><TH>JitTime</BR>msec</TH><TH>IL Size</TH><TH>Native Size</TH><TH>Method Name</TH><TH Title="Is Jit compilation occuring in the background (BG) or not (JIT).">BG</TH><TH>Module</TH></TR>
+<TR><TD Align="Center">3.256</TD><TD Align="Center">1.2</TD><TD Align="Center">0</TD><TD Align="Center">45</TD><TD Align=Left>dynamicClass.IL_STUB_UnboxingStub()</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Private.CoreLib.dll</TD></TR>
+<TR><TD Align="Center">4.484</TD><TD Align="Center">0.1</TD><TD Align="Center">0</TD><TD Align="Center">45</TD><TD Align=Left>dynamicClass.IL_STUB_UnboxingStub()</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Private.CoreLib.dll</TD></TR>
+<TR><TD Align="Center">8.296</TD><TD Align="Center">0.2</TD><TD Align="Center">0</TD><TD Align="Center">45</TD><TD Align=Left>dynamicClass.IL_STUB_UnboxingStub()</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Private.CoreLib.dll</TD></TR>
+<TR><TD Align="Center">8.623</TD><TD Align="Center">0.1</TD><TD Align="Center">0</TD><TD Align="Center">45</TD><TD Align=Left>dynamicClass.IL_STUB_UnboxingStub()</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Private.CoreLib.dll</TD></TR>
+<TR><TD Align="Center">8.744</TD><TD Align="Center">0.1</TD><TD Align="Center">0</TD><TD Align="Center">45</TD><TD Align=Left>dynamicClass.IL_STUB_UnboxingStub()</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Private.CoreLib.dll</TD></TR>
+<TR><TD Align="Center">8.870</TD><TD Align="Center">0.1</TD><TD Align="Center">0</TD><TD Align="Center">45</TD><TD Align=Left>dynamicClass.IL_STUB_UnboxingStub()</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Private.CoreLib.dll</TD></TR>
+<TR><TD Align="Center">16.893</TD><TD Align="Center">0.8</TD><TD Align="Center">41</TD><TD Align="Center">113</TD><TD Align=Left>Program.Main(class System.String[])</TD><TD Align="Center">JIT</TD><TD Align="Center">SampleApplication.dll</TD></TR>
+<TR><TD Align="Center">20.068</TD><TD Align="Center">5.8</TD><TD Align="Center">0</TD><TD Align="Center">397</TD><TD Align=Left>dynamicClass.IL_STUB_PInvoke(class Microsoft.Win32.SafeHandles.SafeFileHandle)</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Console.dll</TD></TR>
+<TR><TD Align="Center">26.249</TD><TD Align="Center">0.4</TD><TD Align="Center">0</TD><TD Align="Center">308</TD><TD Align=Left>dynamicClass.IL_STUB_PInvoke(class Microsoft.Win32.SafeHandles.SafeFileHandle,value class FileStatus&)</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Console.dll</TD></TR>
+<TR><TD Align="Center">73.429</TD><TD Align="Center">0.5</TD><TD Align="Center">0</TD><TD Align="Center">307</TD><TD Align=Left>dynamicClass.IL_STUB_PInvoke(class Microsoft.Win32.SafeHandles.SafeFileHandle,unsigned int8*,int32)</TD><TD Align="Center">JIT</TD><TD Align="Center">System.Console.dll</TD></TR>
+<TR><TD Align="Center">74.016</TD><TD Align="Center">0.1</TD><TD Align="Center">22</TD><TD Align="Center">49</TD><TD Align=Left>Program.RecSpin(int32)</TD><TD Align="Center">JIT</TD><TD Align="Center">SampleApplication.dll</TD></TR>
+<TR><TD Align="Center">74.188</TD><TD Align="Center">6.0</TD><TD Align="Center">105</TD><TD Align="Center">275</TD><TD Align=Left>Program.SpinForASecond()</TD><TD Align="Center">JIT</TD><TD Align="Center">SampleApplication.dll</TD></TR>
+<TR><TD Align="Center">90.971</TD><TD Align="Center">0.1</TD><TD Align="Center">28</TD><TD Align="Center">72</TD><TD Align=Left>Program..cctor()</TD><TD Align="Center">JIT</TD><TD Align="Center">SampleApplication.dll</TD></TR>
+<TR><TD Align="Center">1,080.344</TD><TD Align="Center">0.2</TD><TD Align="Center">22</TD><TD Align="Center">49</TD><TD Align=Left>Program.RecSpinHelper(int32)</TD><TD Align="Center">JIT</TD><TD Align="Center">SampleApplication.dll</TD></TR>
+</Table>
+</Center>
+<HR/><HR/><BR/><BR/>
+<BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/><BR/>
