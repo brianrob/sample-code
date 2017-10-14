@@ -26,7 +26,7 @@ echo ""
 echo ""
 
 # Run PerfViewCollect to generate GCStats
-dotnet ~/src/perfview/src/PerfViewCollect/bin/Release/netcoreapp2.0/PerfViewCollect.dll UserCommand LinuxJitStats demo.trace.zip
+dotnet ~/src/perfview/src/PerfViewCollect/bin/Release/netcoreapp2.0/PerfViewCollect.dll UserCommand LinuxJITStats demo.trace.zip
 
 echo ""
 echo ""
