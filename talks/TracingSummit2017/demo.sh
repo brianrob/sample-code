@@ -109,8 +109,8 @@ WriteLine ""
 
 # Run stackcollapse-perf.pl against the trace.
 WriteLine "Runnning stackcollapse-perf.pl against the trace."
-WriteLine "Command: perf script | ./stackcollapse-perf.pl > out.perf-folded"
-perf script -i results/demo.trace/perf.data | $FLAMEGRAPHTOOLS/stackcollapse-perf.pl > results/out.perf-folded
+WriteLine "Command: perf script -c dotnet | ./stackcollapse-perf.pl > out.perf-folded"
+perf script -i results/demo.trace/perf.data -c dotnet | $FLAMEGRAPHTOOLS/stackcollapse-perf.pl > results/out.perf-folded
 WriteLine ""
 
 WriteLine "Running cat out.perf-folded | ./flamegraph.pl"
