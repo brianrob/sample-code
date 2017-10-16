@@ -12,8 +12,8 @@ FLAMEGRAPHTOOLS=supportfiles/FlameGraph
 
 WriteLine()
 {
-    # Set color to green.
-    tput setaf 2
+    # Set color to yellow.
+    tput setaf 3
 
     # Write the message.
     echo "$1"
@@ -25,8 +25,8 @@ WriteLine()
 
 WriteLineAndWaitForEnter()
 {
-    # Set color to yellow.
-    tput setaf 3
+    # Set color to red.
+    tput setaf 1
 
     read -p "$1"
 
@@ -50,6 +50,8 @@ WriteLine ""
 WriteLine "1. Collect a performance trace using perfcollect.  Under the covers, this uses perf and LTTng."
 WriteLine "2. Create an On-CPU FlameGraph of the data collected using perf."
 WriteLine "3. Process the LTTng trace and create GCStats and JITStats HTML reports using PerfViewCollect."
+WriteLine ""
+WriteLine "Depends on Brendan Gregg's FlameGraph utilities being available in supportfiles/FlameGraph."
 
 # Wait for confirmation to continue.
 WriteLine ""
@@ -82,6 +84,8 @@ WriteLine ""
 WriteLine "Make sure the following environment variables are set for the application being profiled:"
 WriteLine "export COMPlus_PerfMapEnabled=1"
 WriteLine "export COMPlus_EnableEventLog=1"
+WriteLine "export COMPlus_ZapDisable=1"
+WriteLine "export COMPlus_ReadyToRun=0"
 WriteLine ""
 WriteLineAndWaitForEnter "Press enter to continue."
 
