@@ -1,0 +1,2 @@
+OutputPath=/home/brianrob/src/sample-code/talks/LinuxPerformance2018/results
+Providers=Microsoft-Windows-DotNETRuntime:0x4C1DFCCBD:5,Microsoft-DotNETCore-SampleProfiler:0x0:5
